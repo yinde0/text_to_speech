@@ -4,9 +4,11 @@ import uuid
 from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
 from dotenv import load_dotenv
-
+from pathlib import Path
 
 load_dotenv()
+
+Path("data").mkdir(parents=True, exist_ok=True)
 
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 print(ELEVENLABS_API_KEY)
@@ -14,6 +16,7 @@ client = ElevenLabs(
     api_key=ELEVENLABS_API_KEY,
 )
 
+os.makedirs()
 #There should be a drop drow for job id's for different celebrities.
 
 def text_to_speech_file(text: str) -> str:
